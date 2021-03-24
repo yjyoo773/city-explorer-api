@@ -23,18 +23,30 @@ function Forecast(date, description) {
   this.description = description;
 }
 
-// weather_data.map((x) => Forecast(x.datetime, x.weather.description));
-
 app.get("/weather", (req, res) => {
-  console.log(req.query)
-  res.send({
-    longitude: req.query.lon,
-    latitude: req.query.lat,
-    // forecast: Forecast(weather_data.datetime, weather_data.weather),
-    forecast: weather_data.map((x) =>
-      new Forecast(x.datetime, x.weather.description)
-    ),
-  });
+  // console.log(req.query);
+  // res.send({
+  //   longitude: req.query.lon,
+  //   latitude: req.query.lat,
+  //   // forecast: Forecast(weather_data.datetime, weather_data.weather),
+  //   forecast: weather_data.map(
+  //     (x) => new Forecast(x.datetime, x.weather.description)
+  //   ),
+  // });
+  try{
+    console.log(req.query);
+    res.send({
+      longitude: req.query.lon,
+      latitude: req.query.lat,
+      // forecast: Forecast(weather_data.datetime, weather_data.weather),
+      forecast: weather_data.map(
+        (x) => new Forecast(x.datetime, x.weather.description)
+      ),
+    });
+  } catch(err){
+    console.log(err)
+    res.status(500).send(err)
+  }
 });
 
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
