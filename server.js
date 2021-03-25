@@ -30,9 +30,10 @@ function getForecast(req, res) {
   let url = `https://api.weatherbit.io/v2.0/forecast/daily`;
   let queryWeather = {
     key: process.env.WEATHER_API_KEY,
-    lat: lat,
-    lon: lon,
+    // lat: lat,
+    // lon: lon,
     days: 10,
+    city:'Seattle, WA'
   };
   superagent
     .get(url)
@@ -42,6 +43,7 @@ function getForecast(req, res) {
       let forecastArr = saData.map(
         (x) => new Forecast(x.datetime, x.weather.description)
       );
+      // console.log(saResults.body)
       res.status(200).send({
         longitude: lon,
         latitude: lat,
@@ -55,5 +57,4 @@ app.get("/", function (req, res) {
   res.send("Hello World");
 });
 app.get("/weather", getForecast);
-app.
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
