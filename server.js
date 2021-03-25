@@ -33,7 +33,7 @@ function getForecast(req, res) {
     // lat: lat,
     // lon: lon,
     days: 10,
-    city:'Seattle, WA'
+    city: "Seattle, WA",
   };
   superagent
     .get(url)
@@ -49,12 +49,17 @@ function getForecast(req, res) {
         latitude: lat,
         forecast: forecastArr,
       });
+    })
+    .catch((err) => {
+      res.status(500).send(err);
     });
 }
-
 
 app.get("/", function (req, res) {
   res.send("Hello World");
 });
 app.get("/weather", getForecast);
+app.get('*', function(req, res){
+  res.status(404).send('Error: Page not found 404');
+});
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
