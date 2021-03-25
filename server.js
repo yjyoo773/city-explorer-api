@@ -2,64 +2,25 @@
 
 // calling express library
 const express = require("express");
-
 // for env
 require("dotenv").config();
 const cors = require("cors");
 
-// SuperAgent
-const superagent = require("superagent");
-
-// // get weather data
-// const weather = require("./data/weather.json");
-// const weather_data = weather.data;
+// Import Modules
+const getForecast = require("./modules/getForcast");
+const getMovies = require("./modules/getMovies");
 
 // initializing express library
 const app = express();
 app.use(cors());
 const PORT = process.env.PORT;
 
-function Forecast(date, description) {
-  this.date = date;
-  this.description = description;
-}
-
-function getForecast(req, res) {
-  let lon = req.query.lon;
-  let lat = req.query.lat;
-  let url = `https://api.weatherbit.io/v2.0/forecast/daily`;
-  let queryWeather = {
-    key: process.env.WEATHER_API_KEY,
-    // lat: lat,
-    // lon: lon,
-    days: 10,
-    city: "Seattle, WA",
-  };
-  superagent
-    .get(url)
-    .query(queryWeather)
-    .then((saResults) => {
-      let saData = saResults.body.data;
-      let forecastArr = saData.map(
-        (x) => new Forecast(x.datetime, x.weather.description)
-      );
-      // console.log(saResults.body)
-      res.status(200).send({
-        longitude: lon,
-        latitude: lat,
-        forecast: forecastArr,
-      });
-    })
-    .catch((err) => {
-      res.status(500).send(err);
-    });
-}
-
 app.get("/", function (req, res) {
   res.send("Hello World");
 });
 app.get("/weather", getForecast);
-app.get('*', function(req, res){
-  res.status(404).send('Error: Page not found 404');
+app.get("/movies", getMovies);
+app.get("*", function (req, res) {
+  res.status(404).send("Error: Page not found 404");
 });
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
