@@ -4,7 +4,7 @@ const Forecast = require("./forecastConstructor.js");
 
 function getForecast(req, res) {
   let { lat, lon } = req.query;
-  // console.log(lat, lon);
+  console.log(lat, lon);
   let url = `https://api.weatherbit.io/v2.0/forecast/daily`;
   let queryWeather = {
     key: process.env.WEATHER_API_KEY,
