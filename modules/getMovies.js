@@ -14,6 +14,7 @@ function getMovies(req, res) {
     query: title,
   };
   superagent
+//   console.log('testing')
     .get(url)
     .query(queryMovie)
     .then((saResults) => {
@@ -34,6 +35,7 @@ function getMovies(req, res) {
       res.status(200).send(movieArr);
     })
     .catch((err) => {
+        console.log('inside 500 catch')
       res.status(500).send(err);
     });
 }
