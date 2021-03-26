@@ -60,4 +60,36 @@ Finish time: 14:40
 
 Actual time needed to complete: 1.5 hrs
 
+#### 3/25/21
+
+### Name of feature: Movies
+
+Estimate of time needed to complete: 1 hr
+
+Start time: 13:00
+
+Finish time: 13:30
+
+Actual time needed to complete: 30 min
+
+### Name of feature: Publish
+
+Estimate of time needed to complete: 30 min
+
+Start time: 18:00
+
+Finish time: 18:30
+
+Actual time needed to complete: 30 min
+
+### Name of feature: Refactor 
+
+Estimate of time needed to complete: 1 hr
+
+Start time: 13:30
+
+Finish time: 13:45
+
+Actual time needed to complete: 15 min
+
 ## Credit and Collaborations
