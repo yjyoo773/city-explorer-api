@@ -8,7 +8,7 @@ function getMovies(req, res) {
   //   let regex = /\w*\b/;
   let regex = /^([^,])+/;
   let title = req.query.title.match(regex)[0];
-  //   console.log(title);
+  console.log(title);
   let queryMovie = {
     api_key: process.env.MOVIE_API_KEY,
     query: title,
@@ -30,7 +30,7 @@ function getMovies(req, res) {
             x.release_date
           )
       );
-    //   console.log(movieArr)
+      //   console.log(movieArr);
       res.status(200).send(movieArr);
     })
     .catch((err) => {
