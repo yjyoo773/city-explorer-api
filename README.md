@@ -1,7 +1,7 @@
 # City Explorer API
 
 **Author**: Ellis Yoo
-**Version**: 1.0.0
+**Version**: 1.0.2
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -17,7 +17,7 @@ By importing `weather.json` we get the data needed. Then, creating a `Forecast` 
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 #### 03/23/21
-### Name of feature: #1 Set up server repository
+### Name of feature: #1 Set up Server Repository
 
 Estimate of time needed to complete: 30 min
 
@@ -27,7 +27,7 @@ Finish time: 2:10
 
 Actual time needed to complete: 40 min
 
-### Name of feature: # 2 Check weather for searched city
+### Name of feature: # 2 Check Weather for Searched City
 
 Estimate of time needed to complete: 1.5 hr
 
@@ -38,7 +38,7 @@ Finish time: 4:10
 Actual time needed to complete: 2 hr
 
 
-### Name of feature: # 3 Create error function 
+### Name of feature: # 3 Create Error Function 
 
 Estimate of time needed to complete: 2 hr
 
@@ -47,5 +47,17 @@ Start time: 4:10
 Finish time: 5:50
 
 Actual time needed to complete: 1 hr 40 min
+
+#### 3/24/21
+
+### Name of feature: Connect Server to Weather API
+
+Estimate of time needed to complete: 1.5 hrs
+
+Start time: 13:10
+
+Finish time: 14:40
+
+Actual time needed to complete: 1.5 hrs
 
 ## Credit and Collaborations
