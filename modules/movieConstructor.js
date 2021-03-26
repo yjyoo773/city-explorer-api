@@ -13,7 +13,7 @@ function Movie(
   this.overview = overview;
   this.average_votes = vote_average;
   this.total_votes = vote_count;
-  this.image_url = poster_path;
+  this.image_url = `https://image.tmdb.org/t/p/w300${poster_path}`;
   this.popularity = popularity;
   this.released_on = release_date;
 }
