@@ -1,7 +1,7 @@
 # City Explorer API
 
 **Author**: Ellis Yoo
-**Version**: 1.0.2
+**Version**: 1.0.3
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -91,5 +91,17 @@ Start time: 13:30
 Finish time: 13:45
 
 Actual time needed to complete: 15 min
+
+#### 3/26/21
+### Name of feature: Performance
+Store information in object if not already exist to prevent unnecessary API calls and faster performance.
+
+Estimate of time needed to complete: 3hrs
+
+Start time: 13:30
+
+Finish time: 16:30
+
+Actual time needed to complete: 3 hrs
 
 ## Credit and Collaborations
