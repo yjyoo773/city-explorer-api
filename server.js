@@ -36,9 +36,12 @@ const cors = require("cors");
 
 const weatherHandler = require("./modules/weatherHandler.js");
 const movieHandler = require("./modules/movieHandler");
+const yelpHandler = require("./modules/yelpHandler");
 const app = express();
 app.use(cors());
 const PORT = process.env.PORT;
+// const PORT = 3002;
+
 
 // // ==========================  My Code Remove Later!!! ====================================
 
@@ -49,5 +52,6 @@ app.get("/", function (req, res) {
 
 app.get("/movies", movieHandler);
 app.get("/weather", weatherHandler);
+app.get("/yelp", yelpHandler);
 
 app.listen(PORT, () => console.log(`Server up on ${PORT}`));

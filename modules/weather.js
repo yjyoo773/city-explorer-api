@@ -4,14 +4,14 @@ let cache = require("./cache.js");
 const superagent = require("superagent");
 const parseWeather = require("./parseWeather");
 
-function getWeather(latitude, longitude) {
-  const key = "weather-" + latitude + longitude;
+function getWeather(lat, lon) {
+  const key = "weather-" + lat + lon;
   const url = "http://api.weatherbit.io/v2.0/forecast/daily";
   const queryParams = {
     key: process.env.WEATHER_API_KEY,
     lang: "en",
-    lat: latitude,
-    lon: longitude,
+    lat: lat,
+    lon: lon,
     days: 8,
   };
   // cache stays 1 hr
